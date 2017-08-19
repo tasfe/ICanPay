@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICanPay", "ICanPay\ICanPay.csproj", "{8CC9F719-2537-4B54-BAD7-268057B946FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AopSdk", "SDK_NET\AopSdk.csproj", "{9C11CAE5-5188-4E71-825B-68FC3135728A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcpSdk", "AcpSdk\AcpSdk.csproj", "{EC945CE2-C974-4189-ACDE-5E154C7D7E16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{04521755-EC3E-40C0-B7FE-F12B4FDCD78B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CC9F719-2537-4B54-BAD7-268057B946FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CC9F719-2537-4B54-BAD7-268057B946FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CC9F719-2537-4B54-BAD7-268057B946FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CC9F719-2537-4B54-BAD7-268057B946FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC945CE2-C974-4189-ACDE-5E154C7D7E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC945CE2-C974-4189-ACDE-5E154C7D7E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC945CE2-C974-4189-ACDE-5E154C7D7E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC945CE2-C974-4189-ACDE-5E154C7D7E16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04521755-EC3E-40C0-B7FE-F12B4FDCD78B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04521755-EC3E-40C0-B7FE-F12B4FDCD78B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04521755-EC3E-40C0-B7FE-F12B4FDCD78B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04521755-EC3E-40C0-B7FE-F12B4FDCD78B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
