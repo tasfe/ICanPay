@@ -15,7 +15,7 @@ namespace ICanPay.Providers
     /// <remarks>
     /// 使用模式二实现微信支付
     /// </remarks>
-    public sealed class WeChatPaymentGataway : GatewayBase, IPaymentQRCode, IQueryNow, IAppParams
+    public sealed class WeChatPaymentGataway : GatewayBase, IPaymentQRCode, IQueryNow,IWapPaymentUrl, IAppParams
     {
 
         #region 私有字段
@@ -377,6 +377,12 @@ namespace ICanPay.Providers
             resParam.Add("timestamp", GetGatewayParameterValue("timestamp"));
             resParam.Add("partnerid", GetGatewayParameterValue("partnerid"));
             return resParam;
+        }
+
+        public string BuildWapPaymentUrl()
+        {
+            InitPaymentOrderParameter("MWEB");
+            return string.Format("{0}&redirect_url={1}", GetWeixinPaymentUrl(PostOrder(ConvertGatewayParameterDataToXml(), payGatewayUrl)), HttpUtility.UrlEncode(Merchant.ReturnUrl.ToString(), Encoding.UTF8));
         }
     }
 }

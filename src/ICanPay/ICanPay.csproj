@@ -94,6 +94,8 @@
     <Compile Include="IQueryForm.cs" />
     <Compile Include="IQueryNow.cs" />
     <Compile Include="IQueryUrl.cs" />
+    <Compile Include="IWapPaymentForm.cs" />
+    <Compile Include="IWapPaymentUrl.cs" />
     <Compile Include="Merchant.cs" />
     <Compile Include="NotifyProcess.cs" />
     <Compile Include="Order.cs" />

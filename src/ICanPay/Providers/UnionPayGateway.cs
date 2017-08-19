@@ -10,7 +10,7 @@ namespace ICanPay.Providers
     /// <summary>
     /// 银联网关
     /// </summary>
-    public class UnionPayGateway : GatewayBase, IPaymentForm, IQueryNow, IAppParams
+    public class UnionPayGateway : GatewayBase, IPaymentForm, IWapPaymentForm, IQueryNow, IAppParams
     {
         #region 构造函数
 
@@ -93,6 +93,10 @@ namespace ICanPay.Providers
             return resParam;
         }
 
+        public string BuildWapPaymentForm()
+        {
+            return BuildPaymentForm();
+        }
 
         public string BuildPaymentForm()
         {

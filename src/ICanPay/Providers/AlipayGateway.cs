@@ -16,7 +16,7 @@ namespace ICanPay.Providers
     /// <summary>
     /// Ö§¸¶±¦Íø¹Ø
     /// </summary>
-    public sealed class AlipayGateway : GatewayBase, IPaymentForm, IPaymentUrl, IQueryNow, IAppParams
+    public sealed class AlipayGateway : GatewayBase, IPaymentForm, IPaymentUrl, IWapPaymentUrl, IQueryNow, IAppParams
     {
 
         #region Ë½ÓÐ×Ö¶Î
@@ -101,6 +101,25 @@ namespace ICanPay.Providers
             InitOrderParameter("MD5");
             ValidatePaymentOrderParameter();
             return string.Format("{0}?{1}", payGatewayUrl, GetPaymentQueryString());
+        }
+
+        public string BuildWapPaymentUrl()
+        {
+            DefaultAopClient defaultAopClient = new DefaultAopClient(openapiGatewayUrl, Merchant.AppId, Merchant.PrivateKeyPem, true);
+            defaultAopClient.return_url = Merchant.ReturnUrl.ToString();
+            IAopClient client = defaultAopClient;
+            AlipayTradeWapPayRequest request = new AlipayTradeWapPayRequest();
+            request.SetNotifyUrl(Merchant.NotifyUrl.ToString());
+            request.BizContent = JsonConvert.SerializeObject(new
+            {
+                subject = Order.Subject,
+                out_trade_no = Order.OrderNo,
+                timeout_express = "90m",
+                total_amount = Order.OrderAmount,
+                product_code = "QUICK_WAP_WAY"
+            });
+            AlipayTradeWapPayResponse response = client.pageExecute(request, null, "GET");
+            return response.Body;
         }
 
 
